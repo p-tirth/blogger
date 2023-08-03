@@ -5,7 +5,7 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import { useEffect, useState } from "react";
 import db from "../../firebase/firebaseConfig";
 
-  export default function home(){
+  export default function Home(){
     
     const [blogs,setBlogs] = useState([])
     useEffect(()=>{
