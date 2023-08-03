@@ -2,12 +2,14 @@
 import { collection,addDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import db from '../../../firebase/firebaseConfig';
+import {v4 as uuidv4} from "uuid" 
 
 const Form = () => {
   const [formData, setFormData] = useState({
     name: '',
     title: '',
     content: '',
+    id:'',
   });
 
   const handleChange = (e) => {
@@ -23,6 +25,7 @@ const Form = () => {
         name:formData.name,
         title:formData.title,
         content:formData.content,
+        id:uuidv4(),
     })
     setFormData({
         name: '',

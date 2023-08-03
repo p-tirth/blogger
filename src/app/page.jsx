@@ -26,16 +26,21 @@ import db from "../../firebase/firebaseConfig";
       console.log(blogs)
     },[])
 
+    function handelEdit(){
+      console.log("edit this")
+    }
+
     return (
     <>
       <header className="flex justify-between items-center shadow-2xl p-2 mb-5">
         <h1 className="text-3xl p-2 font-bold text-yellow-300">Bloggers</h1>
         <Link href="/newBlog" className="border text-2xl p-2 font-bold border-slate-300 rounded px-2 text-slate-100">New Blog</Link>
       </header>
-        <div>
+        <div className="flex justify-center items-center flex-col">
           {blogs.map((blog,index) => (
-            <div key={index} className="border break-words border-slate-300 rounded p-4 m-1 text-slate-100 mb-5">
+            <div key={index} className="border break-words border-slate-300 rounded p-4 m-1 text-slate-100 mb-5 relative w-3/4">
                 <div className="text-yellow-300 text-center text-3xl">{blog.title}</div>
+                <div className="edit border border-green-300 text-green-300 text-center w-fit absolute top-0 right-0 mr-2 mt-2 px-1" onClick={handelEdit(index)}>edit</div>
                 <div className="text-red-300 text-right">{"~ by "+blog.name}</div>       
                 <div className="">{blog.content}</div>
             </div>
