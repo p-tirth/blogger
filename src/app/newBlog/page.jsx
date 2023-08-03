@@ -36,7 +36,7 @@ const Form = () => {
         <h2 className="text-3xl font-bold mb-6 text-yellow-300">Create a New Blog</h2>
         <form className=" flex flex-col bg-primary p-8 rounded-lg shadow-2xl" onSubmit={handleSubmit}>
             <div className="mb-4 flex justify-around align-center">
-                <div className="mb-4 flex justify-center align-center flex-col inline-block">
+                <div className="mb-4 flex justify-center align-center flex-col">
                     <label className=" text-xl text-center font-medium">Name</label>
                     <input
                         type="text"
@@ -46,7 +46,7 @@ const Form = () => {
                         className=" bg-gray-900 mt-1 px-4 py-2 rounded "
                     />
                 </div>
-                <div className="mb-4 flex justify-center align-center flex-col inline-block">
+                <div className="mb-4 flex justify-center align-center flex-col">
                     <label className="text-xl text-center font-medium">Title of the Blog</label>
                     <input
                         type="text"
