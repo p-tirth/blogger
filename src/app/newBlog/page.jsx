@@ -1,5 +1,7 @@
 "use client"
 import { collection,addDoc ,setDoc ,doc } from 'firebase/firestore';
+import Link from "next/link";
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import db from '../../../firebase/firebaseConfig';
 import {v4 as uuidv4} from "uuid" 
@@ -19,6 +21,7 @@ const Form = () => {
   };
 
   const handleSubmit = async (e) => {
+    // const router = useRouter();
     e.preventDefault();
     console.log(formData); // You can perform your form submission logic here
     const ID = uuidv4()
@@ -33,10 +36,12 @@ const Form = () => {
         title: '',
         content: '',
     })
+    // router.push('/');
   };
 
   return (
     <div className="">
+      <Link href="/" className='bg-gray-900 p-1 rounded text-xl'>&lt;--</Link>
         <h2 className="text-3xl font-bold mb-6 text-yellow-300">Create a New Blog</h2>
         <form className=" flex flex-col bg-primary p-8 rounded-lg shadow-2xl" onSubmit={handleSubmit}>
             <div className="mb-4 flex justify-around align-center">

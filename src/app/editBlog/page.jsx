@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Link from "next/link";
 import db from '../../../firebase/firebaseConfig';
 import { collection, setDoc, doc } from "firebase/firestore";
 export default function EditBlog({searchParams}) {
@@ -25,6 +26,7 @@ export default function EditBlog({searchParams}) {
     };
   return (
     <div className="">
+      <Link href="/" className='bg-gray-900 p-1 rounded text-xl'>&lt;--</Link>
     <h2 className="text-3xl font-bold mb-6 text-yellow-300">Edit the Blog</h2>
     <form className=" flex flex-col bg-primary p-8 rounded-lg shadow-2xl" onSubmit={handleSubmit}>
         <div className="mb-4 flex justify-around align-center">
