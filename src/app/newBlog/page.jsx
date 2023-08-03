@@ -1,5 +1,5 @@
 "use client"
-import { collection,addDoc } from 'firebase/firestore';
+import { collection,addDoc ,setDoc ,doc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import db from '../../../firebase/firebaseConfig';
 import {v4 as uuidv4} from "uuid" 
@@ -21,11 +21,12 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData); // You can perform your form submission logic here
-    await addDoc(collection(db,'Blogs'),{
+    const ID = uuidv4()
+    await setDoc(doc(db,"Blogs",ID),{
         name:formData.name,
         title:formData.title,
         content:formData.content,
-        id:uuidv4(),
+        id:ID,
     })
     setFormData({
         name: '',
