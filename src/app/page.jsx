@@ -25,7 +25,7 @@ import db from "../../firebase/firebaseConfig";
       // console.log(a[0])
       // setBlogs(a)
       console.log(blogs)
-    },[])
+    })
 
     return (
     <>
