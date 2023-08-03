@@ -33,8 +33,8 @@ import db from "../../firebase/firebaseConfig";
         <Link href="/newBlog" className="border text-2xl p-2 font-bold border-slate-300 rounded px-2 text-slate-100">New Blog</Link>
       </header>
         <div>
-          {blogs.map((blog) => (
-            <div className="border break-words border-slate-300 rounded p-4 m-1 text-slate-100 mb-5">
+          {blogs.map((blog,index) => (
+            <div key={index} className="border break-words border-slate-300 rounded p-4 m-1 text-slate-100 mb-5">
                 <div className="text-yellow-300 text-center text-3xl">{blog.title}</div>
                 <div className="text-red-300 text-right">{"~ by "+blog.name}</div>       
                 <div className="">{blog.content}</div>
