@@ -1,7 +1,6 @@
 'use client'
 import Link from "next/link";
 import { collection,addDoc, query, onSnapshot, doc } from "firebase/firestore";
-import { useCollection } from 'react-firebase-hooks/firestore';
 import { useEffect, useState } from "react";
 import db from "../../firebase/firebaseConfig";
 
