@@ -25,50 +25,47 @@ export default function EditBlog({searchParams}) {
       console.log(blog)
     };
   return (
-    <div className="">
+    <div className="h-full">
       <Link href="/" className='bg-gray-900 p-1 rounded text-xl'>&lt;--</Link>
-    <h2 className="text-3xl font-bold mb-6 text-yellow-300">Edit the Blog</h2>
-    <form className=" flex flex-col bg-primary p-8 rounded-lg shadow-2xl" onSubmit={handleSubmit}>
-        <div className="mb-4 flex justify-around align-center">
-            <div className="mb-4 flex justify-center align-center flex-col">
-                <label className=" text-xl text-center font-medium">Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    value={blog.name}
-                    onChange={handleChange}
-                    className=" bg-gray-900 mt-1 px-4 py-2 rounded "
-                />
-            </div>
-            <div className="mb-4 flex justify-center align-center flex-col">
-                <label className="text-xl text-center font-medium">Title of the Blog</label>
-                <input
-                    type="text"
-                    name="title"
-                    value={blog.title}
-                    onChange={handleChange}
-                    className="bg-gray-900 mt-1 px-4 py-2 w-full  rounded"
-                />
-            </div>
-            
+      <h2 className="text-3xl font-bold mb-6 text-yellow-300">Edit the Blog</h2>
+      <div className=''>
+        <form className=" flex flex-col bg-primary p-8 rounded-lg shadow-2xl" onSubmit={handleSubmit}>
+          <div className="md:flex justify-around items-center flex-row">
+              <div className="md:flex flex-col justify-center items-center grow m-2 max-w-md">
+                  <label className="text-xl font-medium">Name</label>
+                  <input
+                      type="text"
+                      name="name"
+                      value={blog.name}
+                      onChange={handleChange}
+                      className="bg-gray-900 mt-1 px-4 py-2 w-full rounded"
+                  />
+              </div>
+              <div className="md:flex flex-col justify-center items-center grow m-2 max-w-md">
+                  <label className="text-xl font-medium">Title of the Blog</label>
+                  <input
+                      type="text"
+                      name="title"
+                      value={blog.title}
+                      onChange={handleChange}
+                      className="bg-gray-900 mt-1 px-4 py-2 w-full  rounded"
+                  />
+              </div>
+              
+          </div>
+        <div className="my-4">
+          <label className="block text-xl font-medium">Your blog content : </label>
+          <textarea
+            name="content"
+            value={blog.content}
+            onChange={handleChange}
+            className="bg-gray-900 mt-1 px-4 py-2 w-full rounded"
+            rows="15"
+          />
         </div>
-    <div className="mb-4">
-      <label className="block text-xl font-medium ml-20">Your blog content : </label>
-      <textarea
-        name="content"
-        value={blog.content}
-        onChange={handleChange}
-        className="bg-gray-900 mt-1 px-4 py-2 w-full rounded"
-        rows="4"
-      />
-    </div>
-    <button
-      type="submit"
-      className="border  border-slate-300 w-50% mx-auto p-4 bg-secondary text-white py-2 rounded hover:bg-opacity-90"
-    >
-      Submit
-    </button>
-  </form>
+        <button type="submit" className="border  border-slate-300 w-50% mx-auto p-4 bg-secondary text-white py-2 rounded hover:bg-opacity-90">Submit</button>
+        </form>
+      </div>
 </div>
   )
 }
